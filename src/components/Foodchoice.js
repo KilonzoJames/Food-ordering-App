@@ -37,7 +37,7 @@ function Foodchoice({choices, setChoices}) {
     <div className='col-12 bg-light'>
       <div className='row'>
         <NavLink to="/">Login Page</NavLink> 
-        <NavLink to="/orders">Order List</NavLink> 
+        <NavLink to="/foodlist">Food List</NavLink> 
         {allChoices}
         <button 
         type="button" 
