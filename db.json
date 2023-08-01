@@ -74,56 +74,6 @@
             "id": 15,
             "name": "Seafood Shack",
             "contact": "contact@seafoodshack.com"
-        },
-        {
-            "id": 16,
-            "name": "Vegetarian Garden",
-            "contact": "info@vegetariangarden.com"
-        },
-        {
-            "id": 17,
-            "name": "Italian Cucina",
-            "contact": "hello@italiancucina.com"
-        },
-        {
-            "id": 18,
-            "name": "Spanish Tapas",
-            "contact": "info@spanishtapas.com"
-        },
-        {
-            "id": 19,
-            "name": "BBQ Junction",
-            "contact": "contact@bbqjunction.com"
-        },
-        {
-            "id": 20,
-            "name": "Mediterranean Delights",
-            "contact": "hello@mediterraneandelights.com"
-        },
-        {
-            "id": 21,
-            "name": "Chinese Wok",
-            "contact": "contact@chinesewok.com"
-        },
-        {
-            "id": 22,
-            "name": "Mexican Cantina",
-            "contact": "info@mexicancantina.com"
-        },
-        {
-            "id": 23,
-            "name": "Indian Spices",
-            "contact": "hello@indianspices.com"
-        },
-        {
-            "id": 24,
-            "name": "Mediterranean Grill",
-            "contact": "info@mediterraneangrill.com"
-        },
-        {
-            "id": 25,
-            "name": "Japanese Ramen",
-            "contact": "contact@japaneseramen.com"
         }
     ],
 

@@ -20,7 +20,7 @@ const rowdata=orders.map(order=>
             <thead>
             <a href="/" className="nav-link text-primary">Home-Page</a> 
             <tr>
-                <th scope="col">#</th>
+                <th scope="col">Food_id</th>
                 <th scope="col">Table Number</th>
                 <th scope="col">Timestamp</th>
                 <th scope="col">Restaurant_id</th>
