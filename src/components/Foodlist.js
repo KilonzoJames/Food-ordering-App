@@ -3,22 +3,39 @@ import { NavLink } from 'react-router-dom'
 import Search from './Search'
 import { useState } from 'react'
 
-function Foodlist({foods,setFood}) {
+function Foodlist({foods, choices, setChoices}) {
     const [hint, setHint] = useState("")
+
+    function addToCart(event){
+      const foodId = parseInt(event.target.id);
+      const selectedFood=foods.find((food) =>food.id===foodId)
+      const isFoodAlreadyAdded = choices.some((food) => food.id === foodId);
+      !isFoodAlreadyAdded?
+      setChoices([...choices, selectedFood]):console.log('Already in favourites');
+      event.target.classList.add("clicked");
+    }
 
     const allFoods=foods.map((food)=>
     (
-        <div className="ui card m-2 border border-primary">
+        <div className="card col-2  border border-primary" key={food.id}>
             <div className="image">
-                <img src="https://tastesbetterfromscratch.com/wp-content/uploads/2023/04/Hershey-Chocolate-Cake-8-2-500x500.jpg" alt='Logo'/>
+                <img className='card-img-top' src="https://tastesbetterfromscratch.com/wp-content/uploads/2023/04/Hershey-Chocolate-Cake-8-2-500x500.jpg" alt='Logo'/>
             </div>
             <div className="content">
-                <div className="header">{food.food}</div>
-                <div className="meta"><span className="date">{food.price}</span></div>
-                <div className="description">{food.restaurant_id}</div>
+                <div className="header">Food: {food.food}</div>
+                <div className="meta"><span className="date">Price: {food.price}</span></div>
+                <div className="description">Restaurant_id: {food.restaurant_id}</div>
             </div>
-            <button type="button" className="btn btn-primary">Add to Cart</button>
-            <button type="button" className="btn btn-warning">Checkout</button>
+            <button 
+            onClick={addToCart}
+            id={food.id}
+            type="button" 
+            className="btn btn-primary"
+            >Add to Cart</button>
+            <button 
+            type="button" 
+            className="btn btn-warning"
+            >Checkout</button>
         </div>
       )
     )
@@ -26,9 +43,9 @@ function Foodlist({foods,setFood}) {
   return  (
     <div className='col-12 bg-light'>
       <div className='row'>
-        <nav className='foodchoices'>
+        <nav className="align-items-center justifd-flex y-content-center">
             <NavLink to="/" className="nav-link text-primary">Login Page</NavLink> 
-            <NavLink to="/foodchoice" className="nav-link text-primary">Food choices</NavLink> 
+            <NavLink to="/foodchoice" className="nav-link text-primary">View Cart</NavLink> 
         </nav>
         <Search hint={hint} setHint={setHint}/>
         {allFoods}

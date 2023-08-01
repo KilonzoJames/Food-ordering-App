@@ -11,7 +11,7 @@ function Login() {
       <div className="row justify-content-center">
         <div className="col-md-6">
           <div className="d-flex align-items-center justify-content-center" style={{ height: '100vh' }}>
-            <form className='borderstyling border border-primary' style={{ minWidth: '500px', maxWidth: '800px', }}>
+            <form style={{ minWidth: '500px', maxWidth: '800px', }}>
               <div className="mb-3">
                 <label 
                 htmlFor="exampleInputEmail1" 

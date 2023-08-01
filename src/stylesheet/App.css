@@ -1,7 +1,18 @@
 @import url(https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css);
-@import url(semantic-ui-css/semantic.min.css);
-.borderstyling{
-    padding: 1cm;
-    background-color: rgb(194, 207, 216);
-    border: 4px solid rgb(72, 113, 189);
+button.clicked {
+    background-color: red; 
+  }
+.card:hover{
+    transform: scale(1.04);
+    cursor: pointer;
+    }
+.center-button {
+    margin-left: auto;
+    margin-right: auto;
+    height: 50px;
+    width: 700px;
+    }
+table{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: large;
 }
