@@ -34,8 +34,10 @@ function Foodlist({foods, choices, setChoices}) {
             >Add to Cart</button>
             <button 
             type="button" 
-            className="btn btn-warning"
-            >Checkout</button>
+            className="btn btn-info"
+            >
+            <NavLink to="/foodchoice" className="nav-link text-light">View Cart</NavLink> 
+            </button>
         </div>
       )
     )
@@ -45,7 +47,6 @@ function Foodlist({foods, choices, setChoices}) {
       <div className='row'>
         <nav className="align-items-center justifd-flex y-content-center">
             <NavLink to="/" className="nav-link text-primary">Login Page</NavLink> 
-            <NavLink to="/foodchoice" className="nav-link text-primary">View Cart</NavLink> 
         </nav>
         <Search hint={hint} setHint={setHint}/>
         {allFoods}

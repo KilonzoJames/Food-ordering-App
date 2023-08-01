@@ -16,7 +16,7 @@ function Foodchoice({choices, setChoices}) {
                 <div className="description">Restaurant_id: {choice.restaurant_id}</div>
             </div>
             <button 
-            onClick={removeFood}
+            onClick={()=>removeFood(choice)}
             id={choice.id}
             type="button" 
             className="btn btn-primary"
