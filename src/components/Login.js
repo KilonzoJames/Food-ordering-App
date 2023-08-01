@@ -1,6 +1,11 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 
 function Login() {
+    function handleSubmit(event){
+console.log("object")    }
+
+
   return (
     <div>
         <form>
@@ -17,7 +22,12 @@ function Login() {
                 <input type="checkbox" className="form-check-input" id="exampleCheck1"/>
                 <label className="form-check-label" htmlFor="exampleCheck1">Check me out</label>
             </div>
-            <button type="submit" className="btn btn-primary">Submit</button>
+            <button 
+            type="submit" 
+            className="btn btn-primary"
+            onSubmit={handleSubmit}>
+            <NavLink to="/foodlist">Submit</NavLink> 
+            </button>
         </form>
       
     </div>

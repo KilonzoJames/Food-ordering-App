@@ -6,7 +6,7 @@ import { Route, Routes } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
 function App() {
-  const [food, setFood] = useState()
+  const [foods, setFood] = useState([])
 useEffect(()=>{
   const url=" http://localhost:4000/food";
   fetch(url).then(res=>res.json().then(data=>setFood(data)))}
@@ -14,8 +14,8 @@ useEffect(()=>{
 
   return (
     <Routes>
-      <Route exact path='/' element={<Login/>}/>     
-      <Route  path='/foodlist' element={<Foodlist food={food} setFood={setFood} />}/> 
+      <Route exact path='/login' element={<Login/>}/>     
+      <Route  path='/foodlist' element={<Foodlist foods={foods} setFood={setFood} />}/> 
       <Route  path='/foodchoice' element={<Foodchoice/>}/> 
     </Routes>
   );
