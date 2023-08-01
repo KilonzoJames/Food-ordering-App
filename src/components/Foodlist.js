@@ -14,8 +14,13 @@ function Foodlist({foods, choices, setChoices}) {
       setChoices([...choices, selectedFood]):console.log('Already in favourites');
       event.target.classList.add("clicked");
     }
+    const filteredFoods=foods.filter(food=>{
+      const lowerCaseValue = hint.toLowerCase();
+      return( food.food.toLowerCase().includes(lowerCaseValue)    
+      );
+    });
 
-    const allFoods=foods.map((food)=>
+    const allFoods=filteredFoods.map((food)=>
     (
         <div className="card col-2  border border-primary" key={food.id}>
             <div className="image">
