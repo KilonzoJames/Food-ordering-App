@@ -1,5 +1,7 @@
 @import url(https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css);
 @import url(semantic-ui-css/semantic.min.css);
-.foodchoices{
-    color: black;
+.borderstyling{
+    padding: 1cm;
+    background-color: rgb(194, 207, 216);
+    border: 4px solid rgb(72, 113, 189);
 }
