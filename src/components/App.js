@@ -2,6 +2,7 @@ import '../stylesheet/App.css';
 import Login from './Login';
 import Foodlist from './Foodlist';
 import Foodchoice from './Foodchoice';
+import OrderList from './OrderList';
 import { Route, Routes } from 'react-router-dom'; 
 import { useState, useEffect } from 'react';
 
@@ -24,6 +25,9 @@ useEffect(()=>{
       <Route  
       path='/foodchoice' 
       element={<Foodchoice choices={choices} setChoices={setChoices} />}/> 
+       <Route  
+      path='/orders' 
+      element={<OrderList/>}/> 
     </Routes>
   );
 }

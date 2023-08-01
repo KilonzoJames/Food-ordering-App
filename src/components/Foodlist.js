@@ -1,7 +1,11 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import Search from './Search'
+import { useState } from 'react'
 
 function Foodlist({foods,setFood}) {
+    const [hint, setHint] = useState("")
+
     const allFoods=foods.map((food)=>
     (
         <div class="ui card m-2 border border-primary">
@@ -26,6 +30,7 @@ function Foodlist({foods,setFood}) {
             <NavLink to="/" className="nav-link text-primary">Login Page</NavLink> 
             <NavLink to="/foodchoice" className="nav-link text-primary">Food choices</NavLink> 
         </nav>
+        <Search hint={hint} setHint={setHint}/>
         {allFoods}
       </div>
     </div>
