@@ -2,10 +2,10 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 
 
-function Foodchoice() {
+function Foodchoice({choices, setChoices}) {
   return (
     <div>
-        <NavLink to="/login">Login Page</NavLink> 
+        <NavLink to="/">Login Page</NavLink> 
     </div>
   )
 }
