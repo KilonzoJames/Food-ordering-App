@@ -37,11 +37,15 @@ function Foodchoice({choices, setChoices}) {
     <div className='col-12 bg-light'>
       <div className='row'>
         <NavLink to="/">Login Page</NavLink> 
-        <NavLink to="/foodlist">Food List</NavLink> 
+        <NavLink to="/orders">Order List</NavLink> 
         {allChoices}
         <button 
-        type="button" 
+        type="submit" 
         className="center-button btn btn-success btn-width-50"
+        onClick={() => {
+          alert('Thank you for your purchase!');
+          window.location.reload();
+      }}
         >$ {totalPrice}
         <br/>
         Checkout</button>
