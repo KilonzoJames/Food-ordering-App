@@ -114,31 +114,6 @@
             "id": 20,
             "name": "Mediterranean Delights",
             "contact": "hello@mediterraneandelights.com"
-        },
-        {
-            "id": 21,
-            "name": "Chinese Wok",
-            "contact": "contact@chinesewok.com"
-        },
-        {
-            "id": 22,
-            "name": "Mexican Cantina",
-            "contact": "info@mexicancantina.com"
-        },
-        {
-            "id": 23,
-            "name": "Indian Spices",
-            "contact": "hello@indianspices.com"
-        },
-        {
-            "id": 24,
-            "name": "Mediterranean Grill",
-            "contact": "info@mediterraneangrill.com"
-        },
-        {
-            "id": 25,
-            "name": "Japanese Ramen",
-            "contact": "contact@japaneseramen.com"
         }
     ],
   
@@ -287,35 +262,35 @@
             "id": 21,
             "food": "Kung Pao Chicken",
             "price": 11.75,
-            "restaurant_id": 21,
+            "restaurant_id": 17,
             "image":"https://img.taste.com.au/Ctt8f9MP/w720-h480-cfill-q80/taste/2018/02/kung-pao-chicken-taste-135078-1.jpg"
         },
         {
             "id": 22,
             "food": "Taco Platter",
             "price": 14.99,
-            "restaurant_id": 22,
+            "restaurant_id": 12,
             "image":"https://images.squarespace-cdn.com/content/v1/5996790ea5790ac3a34f2982/1630091352527-9VDT1OULC1X8COVFPB2Y/Ritscher---Maya-Tamayo---Taco-Platter-4.jpg"
         },
         {
             "id": 23,
             "food": "Biryani",
             "price": 10.49,
-            "restaurant_id": 23,
-            "image":"https://www.cookwithnabeela.com/wp-content/uploads/2023/03/MuttonBiryani.webp"
+            "restaurant_id": 3,
+            "image":"https://www.cookwithnabeela.com/wp-content/uploads/2023/03/MuttonBiryani.jpg"
         },
         {
             "id": 24,
             "food": "Grilled Lamb Chops",
             "price": 24.95,
-            "restaurant_id": 24,
+            "restaurant_id": 4,
             "image":"https://hips.hearstapps.com/hmg-prod/images/grilled-lamb-chops-recipe-2-1654114439.jpg"
         },
         {
             "id": 25,
             "food": "Ramen Bowl",
             "price": 13.50,
-            "restaurant_id": 25,
+            "restaurant_id": 5,
             "image":"https://3f4c2184e060ce99111b-f8c0985c8cb63a71df5cb7fd729edcab.ssl.cf2.rackcdn.com/media/15684/ramenbowls.jpg"
         }
     ],

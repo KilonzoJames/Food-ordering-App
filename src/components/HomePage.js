@@ -36,9 +36,9 @@ const HomePage = ({restaurants, setRestaurants}) => {
                   <p className="card-text">{restaurant.description}</p>
                 </div>
                 <div className="d-grid">
-                  <NavLink to={`/foodlist`} className="btn btn-primary">
-                    View Menu
-                  </NavLink>
+                <NavLink to={`/foodlist/${restaurant.id}`} className="btn btn-primary">
+                  View Menu
+                </NavLink>
                 </div>
               </div>
             </div>

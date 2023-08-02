@@ -34,20 +34,11 @@ useEffect(() => {
 
   return (
     <Routes>
-      <Route 
-      exact path='/' 
-      element={<Login/>}/>     
-      <Route  
-      path='/foodlist' 
-      element={<Foodlist foods={foods} choices={choices} setChoices={setChoices} />}/> 
-      <Route  
-      path='/foodchoice' 
-      element={<Foodchoice choices={choices} setChoices={setChoices} />}/> 
-       <Route  
-      path='/orders' 
-      element={<OrderList orders={orders} setOrders={setOrders} restaurants={restaurants}/>}/> 
-      <Route path="/homepage" 
-      element={<HomePage restaurants={restaurants} setRestaurants={setRestaurants}/>} />
+      <Route exact path="/" element={<Login />} />
+      <Route path="/foodlist/:id" element={<Foodlist foods={foods} choices={choices} setChoices={setChoices} />} />
+      <Route path="/foodchoice" element={<Foodchoice choices={choices} setChoices={setChoices} />} />
+      <Route path="/orders" element={<OrderList orders={orders} setOrders={setOrders} restaurants={restaurants} />} />
+      <Route path="/homepage" element={<HomePage restaurants={restaurants} setRestaurants={setRestaurants} />} />
     </Routes>
   );
 }
