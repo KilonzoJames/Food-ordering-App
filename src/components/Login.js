@@ -1,69 +1,58 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
-function Login() {
-  function handleSubmit(event) {
-    console.log("object");
-  }
+const Login = () => {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    if (username.length >= 4 && password.length >= 4) {
+      console.log('Logged in as:', username);
+    } else {
+      setError('Username and password must be at least 4 characters long.');
+    }
+  };
 
   return (
     <>
-      <h1>Welcome to Nextgen Food Court</h1>
-      <div className="container mt-5">
-        <div className="row justify-content-center">
-          <div className="col-md-6">
-            <div className="d-flex align-items-center justify-content-center" style={{ height: '100vh' }}>
-              <form style={{ minWidth: '500px', maxWidth: '800px', }}>
-                <div className="mb-3">
-                  <label 
-                  htmlFor="name" 
-                  className="form-label">
-                  Username
-                  </label>
-                  <input 
-                  placeholder="Enter username"
-                  type="name" 
-                  className="form-control"
-                  />
-                </div>
-                
-                <div className="mb-3">
-                  <label 
-                  htmlFor="exampleInputPassword1" 
-                  className="form-label">
-                  Password
-                  </label>
-                  <input 
-                  type="password" 
-                  placeholder="Enter password"
-                  className="form-control"
-                  />
-                </div>
-
-                <div className="mb-3 form-check">
-                  <input 
-                  type="checkbox" 
-                  className="form-check-input" />
-                  <label 
-                  className="form-check-label" 
-                  htmlFor="exampleCheck1">
-                  Check me out
-                  </label>
-                </div>
-
-                <button
-                  type="submit"
-                  className="btn btn-primary"
-                  onClick={handleSubmit}>
-                  <NavLink to="/foodlist" className="nav-link text-white">Submit</NavLink>
-                </button>
-              </form>
-            </div>
-          </div>
+    <h1 id="login-text">Welcome to Nextgen Food Court</h1>
+    <div className="login-box">
+      <h2>Login</h2>
+      {error && <p className="error">{error}</p>}
+      <form onSubmit={handleSubmit}>
+        <div className="user-box">
+          <input
+            type="text"
+            name="username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            required
+          />
+          <label>Username</label>
         </div>
-      </div>
-    </>
+        <div className="user-box">
+          <input
+            type="password"
+            name="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
+          <label>Password</label>
+        </div>
+        <button type="submit">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <NavLink to="/foodlist">Submit</NavLink>
+        </button>
+      </form>
+    </div>
+  </>
   );
-}
+};
 
 export default Login;
