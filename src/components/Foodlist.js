@@ -35,10 +35,10 @@ function Foodlist({ foods, choices, setChoices }) {
         </div>
         <div className="description">Restaurant_id: {food.restaurant_id}</div>
       </div>
-      <button onClick={addToCart} id={food.id} type="button" className="btn btn-primary">
+      <button onClick={addToCart} id={food.id} type="button" className="btn btn-primary m-2">
         Add to Cart
       </button>
-      <button type="button" className="btn btn-info">
+      <button type="button" className="btn btn-info m-2">
         <NavLink to="/foodchoice" className="nav-link text-light">
           View Cart
         </NavLink>
