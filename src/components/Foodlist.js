@@ -28,7 +28,7 @@ function Foodlist({foods, choices, setChoices}) {
     (
         <div className="card col-2  border border-primary" key={food.id}>
             <div className="image">
-                <img src={food.image} alt={food.name} style={{ width:'307px', height: '250px', objectFit: 'cover' }}/>
+                <img src={food.image} alt={food.name} style={{ width:'100%', height: '250px', objectFit: 'cover' }}/>
             </div>
             <div className="content">
                 <div className="header">Food: {food.food}</div>

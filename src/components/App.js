@@ -11,6 +11,8 @@ function App() {
   const [foods, setFood] = useState([])
   const [orders, setOrders] = useState([])
   const [choices, setChoices]=useState([])
+  const [restaurants, setRestaurants] = useState([]);
+
 useEffect(()=>{
   const url=" http://localhost:4000/food";
   fetch(url).then(res=>res.json().then(data=>setFood(data)))}
@@ -19,6 +21,16 @@ useEffect(()=>{
   const url=" http://localhost:4000/orders";
   fetch(url).then(res=>res.json().then(data=>setOrders(data)))}
   ,[])
+useEffect(() => {
+  fetch('http://localhost:4000/restaurant')
+  .then((response) => response.json())
+  .then((data) => {
+    setRestaurants(data);
+      })
+  .catch((error) => {
+    console.error('Error fetching restaurants:', error);
+  });
+  }, []);
 
   return (
     <Routes>
@@ -33,8 +45,9 @@ useEffect(()=>{
       element={<Foodchoice choices={choices} setChoices={setChoices} />}/> 
        <Route  
       path='/orders' 
-      element={<OrderList orders={orders} setOrders={setOrders} />}/> 
-      <Route path="/homepage" element={<HomePage />} />
+      element={<OrderList orders={orders} setOrders={setOrders} restaurants={restaurants}/>}/> 
+      <Route path="/homepage" 
+      element={<HomePage restaurants={restaurants} setRestaurants={setRestaurants}/>} />
     </Routes>
   );
 }

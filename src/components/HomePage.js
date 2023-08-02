@@ -1,22 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
-const HomePage = () => {
-  const [restaurants, setRestaurants] = useState([]);
+const HomePage = ({restaurants, setRestaurants}) => {
   const [searchTerm, setSearchTerm] = useState('');
-
-  useEffect(() => {
-    fetch('http://localhost:4000/restaurant')
-      .then((response) => response.json())
-      .then((data) => {
-        setRestaurants(data);
-      })
-      .catch((error) => {
-        console.error('Error fetching restaurants:', error);
-      });
-  }, []);
-  
-  console.log(restaurants);
 
   // Filter the restaurants based on the search term
   const filteredRestaurants = restaurants.filter((restaurant) => {
