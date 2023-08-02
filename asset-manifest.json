@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/KilonzoJames/Food-ordering-App/static/css/main.a8e239cc.css",
-    "main.js": "/KilonzoJames/Food-ordering-App/static/js/main.c20a8dca.js",
+    "main.js": "/KilonzoJames/Food-ordering-App/static/js/main.f5571d3e.js",
     "index.html": "/KilonzoJames/Food-ordering-App/index.html",
     "main.a8e239cc.css.map": "/KilonzoJames/Food-ordering-App/static/css/main.a8e239cc.css.map",
-    "main.c20a8dca.js.map": "/KilonzoJames/Food-ordering-App/static/js/main.c20a8dca.js.map"
+    "main.f5571d3e.js.map": "/KilonzoJames/Food-ordering-App/static/js/main.f5571d3e.js.map"
   },
   "entrypoints": [
     "static/css/main.a8e239cc.css",
-    "static/js/main.c20a8dca.js"
+    "static/js/main.f5571d3e.js"
   ]
 }
