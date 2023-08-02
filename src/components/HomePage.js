@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import React from "react";
+import { NavLink } from "react-router-dom";
 
-const HomePage = ({restaurants, setRestaurants}) => {
-  const [searchTerm, setSearchTerm] = useState('');
+const HomePage = ({ restaurants, setRestaurants }) => {
+  const [searchTerm, setSearchTerm] = React.useState("");
 
-  // Filter the restaurants based on the search term
   const filteredRestaurants = restaurants.filter((restaurant) => {
     return restaurant.name.toLowerCase().includes(searchTerm.toLowerCase());
   });
@@ -12,34 +11,32 @@ const HomePage = ({restaurants, setRestaurants}) => {
   return (
     <div className="container">
       <h1>Welcome to the Food Court!</h1>
-      <div>
+      <div className="mb-3">
         <input
           type="text"
-          placeholder="Search for restaurants..."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
+          className="form-control"
+          placeholder="Search for restaurants..."
+          aria-label="Search for restaurants"
         />
       </div>
-      <div className="row row-cols-5 gy-4">
+      <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 gy-4">
         {filteredRestaurants.map((restaurant) => (
           <div className="col" key={restaurant.id}>
-            <div className="card border-primary" style={{ height: '100%' }}>
+            <div className="card border-primary h-100">
               <img
                 className="card-img-top"
                 src={restaurant.image}
                 alt={restaurant.name}
                 style={{ height: '200px', objectFit: 'cover' }}
               />
-              <div className="card-body d-flex flex-column justify-content-between">
-                <div>
-                  <h2 className="card-title">{restaurant.name}</h2>
-                  <p className="card-text">{restaurant.description}</p>
-                </div>
-                <div className="d-grid">
+              <div className="card-body">
+                <h2 className="card-title">{restaurant.name}</h2>
+                <p className="card-text">{restaurant.description}</p>
                 <NavLink to={`/foodlist/${restaurant.id}`} className="btn btn-primary">
                   View Menu
                 </NavLink>
-                </div>
               </div>
             </div>
           </div>
