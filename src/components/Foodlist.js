@@ -54,7 +54,9 @@ function Foodlist({foods, choices, setChoices}) {
             <NavLink to="/" className="nav-link text-primary">Login Page</NavLink> 
         </nav>
         <Search hint={hint} setHint={setHint}/>
-        {allFoods}
+        <div className="food-list"> {/* add this class here */}
+          {allFoods}
+        </div>
       </div>
     </div>
   )
