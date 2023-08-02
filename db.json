@@ -74,162 +74,237 @@
             "id": 15,
             "name": "Seafood Shack",
             "contact": "contact@seafoodshack.com"
+        },
+        {
+            "id": 16,
+            "name": "Vegetarian Garden",
+            "contact": "info@vegetariangarden.com"
+        },
+        {
+            "id": 17,
+            "name": "Italian Cucina",
+            "contact": "hello@italiancucina.com"
+        },
+        {
+            "id": 18,
+            "name": "Spanish Tapas",
+            "contact": "info@spanishtapas.com"
+        },
+        {
+            "id": 19,
+            "name": "BBQ Junction",
+            "contact": "contact@bbqjunction.com"
+        },
+        {
+            "id": 20,
+            "name": "Mediterranean Delights",
+            "contact": "hello@mediterraneandelights.com"
+        },
+        {
+            "id": 21,
+            "name": "Chinese Wok",
+            "contact": "contact@chinesewok.com"
+        },
+        {
+            "id": 22,
+            "name": "Mexican Cantina",
+            "contact": "info@mexicancantina.com"
+        },
+        {
+            "id": 23,
+            "name": "Indian Spices",
+            "contact": "hello@indianspices.com"
+        },
+        {
+            "id": 24,
+            "name": "Mediterranean Grill",
+            "contact": "info@mediterraneangrill.com"
+        },
+        {
+            "id": 25,
+            "name": "Japanese Ramen",
+            "contact": "contact@japaneseramen.com"
         }
     ],
-
+  
     "food": [
         {
             "id": 1,
             "food": "Pizza Margherita",
             "price": 10.99,
-            "restaurant_id": 1
+            "restaurant_id": 1,
+            "image":"https://www.giallozafferano.com/images/228-22845/Neapolitan-pizza_450x300.jpg"
         },
         {
             "id": 2,
             "food": "Chicken Tikka Masala",
             "price": 12.49,
-            "restaurant_id": 2
+            "restaurant_id": 2,
+            "image":"https://www.seriouseats.com/thmb/DbQHUK2yNCALBnZE-H1M2AKLkok=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/chicken-tikka-masala-for-the-grill-recipe-hero-2_1-cb493f49e30140efbffec162d5f2d1d7.JPG"
         },
         {
             "id": 3,
             "food": "Steakhouse Burger",
             "price": 8.99,
-            "restaurant_id": 6
+            "restaurant_id": 6,
+            "image":"https://media.blueapron.com/recipes/27009/square_newsletter_images/1629222102-28-0030-9002/0920_2P19_SteakHouse-Burger_214_1_SQ_Web.jpg?quality=80&width=850&format=p.jpg"
         },
         {
             "id": 4,
             "food": "Sushi Combo",
             "price": 22.99,
-            "restaurant_id": 8
+            "restaurant_id": 8,
+            "image":"https://sushibymatsu.com/wp-content/uploads/2017/12/sushi-sashimi-combo.jpg"
         },
         {
             "id": 5,
             "food": "Enchiladas",
             "price": 9.95,
-            "restaurant_id": 9
+            "restaurant_id": 9,
+            "image":"https://www.eatingbirdfood.com/wp-content/uploads/2020/01/healthy-chicken-enchiladas-2.jpg"
         },
         {
             "id": 6,
             "food": "Chicken Alfredo",
             "price": 14.75,
-            "restaurant_id": 7
+            "restaurant_id": 7,
+            "image":"https://www.budgetbytes.com/wp-content/uploads/2022/07/Chicken-Alfredo-bowl.jpg"
         },
         {
             "id": 7,
             "food": "Butter Chicken",
             "price": 13.99,
-            "restaurant_id": 3
+            "restaurant_id": 3,
+            "image":"https://masalaandchai.com/wp-content/uploads/2022/03/Butter-Chicken-500x375.jpg"
         },
         {
             "id": 8,
             "food": "Pepperoni Pizza",
             "price": 12.99,
-            "restaurant_id": 5
+            "restaurant_id": 5,
+            "image":"https://sipbitego.com/wp-content/uploads/2021/08/Pepperoni-Pizza-Recipe-Sip-Bite-Go.jpg"
         },
         {
             "id": 9,
             "food": "Quesadillas",
             "price": 7.99,
-            "restaurant_id": 9
+            "restaurant_id": 9,
+            "image":"https://recipetineats.com/wp-content/uploads/2018/06/Quesadillas_4.jpg"
         },
         {
             "id": 10,
             "food": "Tempura Roll",
             "price": 18.50,
-            "restaurant_id": 8
+            "restaurant_id": 8,
+            "image":"https://norecipes.com/wp-content/uploads/2022/02/shrimp-tempura-roll-004.jpg"
         },
         {
             "id": 11,
             "food": "Spanakopita",
             "price": 9.25,
-            "restaurant_id": 11
+            "restaurant_id": 11,
+            "image":"https://www.365daysofbakingandmore.com/wp-content/uploads/2015/11/Spanakopita-1.jpg"
         },
         {
             "id": 12,
             "food": "Pad Thai",
             "price": 11.99,
-            "restaurant_id": 12
+            "restaurant_id": 12,
+            "image":"https://tastesbetterfromscratch.com/wp-content/uploads/2018/08/Pad-Thai-Web-7.jpg"
         },
         {
             "id": 13,
             "food": "Croissant",
             "price": 3.75,
-            "restaurant_id": 13
+            "restaurant_id": 13,
+            "image":"https://breadsandsweets.com/wp-content/uploads/2021/08/croissant-pic-4.jpg"
         },
         {
             "id": 14,
             "food": "Bulgogi",
             "price": 14.50,
-            "restaurant_id": 14
+            "restaurant_id": 14,
+            "image":"https://s23209.pcdn.co/wp-content/uploads/2019/04/Korean-Beef-BulgogiIMG_9246.jpg"
         },
         {
             "id": 15,
             "food": "Grilled Shrimp",
             "price": 16.99,
-            "restaurant_id": 15
+            "restaurant_id": 15,
+            "image":"https://hips.hearstapps.com/hmg-prod/images/grilled-shrimp-vertical-1528757549.jpg"
         },
         {
             "id": 16,
             "food": "Vegetable Curry",
             "price": 10.99,
-            "restaurant_id": 16
+            "restaurant_id": 16,
+            "image":"https://shwetainthekitchen.com/wp-content/uploads/2023/03/mixed-vegetable-curry.jpg"
         },
         {
             "id": 17,
             "food": "Lasagna",
             "price": 12.75,
-            "restaurant_id": 17
+            "restaurant_id": 17,
+            "image":"https://www.thewholesomedish.com/wp-content/uploads/2018/07/Best-Lasagna-550-500x375.jpg"
         },
         {
             "id": 18,
             "food": "Tapas Platter",
             "price": 15.99,
-            "restaurant_id": 18
+            "restaurant_id": 18,
+            "image":"https://dish.co.nz/assets/media/images/spanishtapasplatter69__FillWzg1MCwxMTc0XQ.jpg"
         },
         {
             "id": 19,
             "food": "BBQ Ribs",
             "price": 19.95,
-            "restaurant_id": 19
+            "restaurant_id": 19,
+            "image":"https://realhousemoms.com/wp-content/uploads/Grilled-Ribs-RECIPE-CARD.jpg"
         },
         {
             "id": 20,
             "food": "Greek Salad",
             "price": 8.49,
-            "restaurant_id": 11
+            "restaurant_id": 11,
+            "image":"https://i2.wp.com/www.downshiftology.com/wp-content/uploads/2018/08/Greek-Salad-6-1.jpg"
         },
         {
             "id": 21,
             "food": "Kung Pao Chicken",
             "price": 11.75,
-            "restaurant_id": 21
+            "restaurant_id": 21,
+            "image":"https://img.taste.com.au/Ctt8f9MP/w720-h480-cfill-q80/taste/2018/02/kung-pao-chicken-taste-135078-1.jpg"
         },
         {
             "id": 22,
             "food": "Taco Platter",
             "price": 14.99,
-            "restaurant_id": 22
+            "restaurant_id": 22,
+            "image":"https://images.squarespace-cdn.com/content/v1/5996790ea5790ac3a34f2982/1630091352527-9VDT1OULC1X8COVFPB2Y/Ritscher---Maya-Tamayo---Taco-Platter-4.jpg"
         },
         {
             "id": 23,
             "food": "Biryani",
             "price": 10.49,
-            "restaurant_id": 23
+            "restaurant_id": 23,
+            "image":"https://www.cookwithnabeela.com/wp-content/uploads/2023/03/MuttonBiryani.webp"
         },
         {
             "id": 24,
             "food": "Grilled Lamb Chops",
             "price": 24.95,
-            "restaurant_id": 24
+            "restaurant_id": 24,
+            "image":"https://hips.hearstapps.com/hmg-prod/images/grilled-lamb-chops-recipe-2-1654114439.jpg"
         },
         {
             "id": 25,
             "food": "Ramen Bowl",
             "price": 13.50,
-            "restaurant_id": 25
+            "restaurant_id": 25,
+            "image":"https://3f4c2184e060ce99111b-f8c0985c8cb63a71df5cb7fd729edcab.ssl.cf2.rackcdn.com/media/15684/ramenbowls.jpg"
         }
     ],
-
+  
     
     "orders": [
         {
@@ -408,4 +483,4 @@
             "restaurant_id": 15
         }
     ] 
-}
+  }

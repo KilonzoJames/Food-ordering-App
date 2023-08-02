@@ -20,11 +20,12 @@ function Foodlist({foods, choices, setChoices}) {
       );
     });
 
+
     const allFoods=filteredFoods.map((food)=>
     (
         <div className="card col-2  border border-primary" key={food.id}>
             <div className="image">
-                <img className='card-img-top' src="https://tastesbetterfromscratch.com/wp-content/uploads/2023/04/Hershey-Chocolate-Cake-8-2-500x500.jpg" alt='Logo'/>
+                <img src={food.image} alt={food.name} style={{ width:'307px', height: '250px', objectFit: 'cover' }}/>
             </div>
             <div className="content">
                 <div className="header">Food: {food.food}</div>
