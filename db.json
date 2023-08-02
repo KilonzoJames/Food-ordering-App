@@ -1,29 +1,44 @@
 {
     "restaurant": [
         {
-            "id": 1,
-            "name": "Tasty Bites",
-            "contact": "contact@tastybites.com"
+          "id": 1,
+          "name": "Saffron Indian Cuisine",
+          "description": "Authentic North Indian cuisine",
+          "contact": "555-123-4567",
+          "address": "123 Main St",
+          "image": "https://thefridaylunch.files.wordpress.com/2010/11/img_4579.jpg"
         },
         {
-            "id": 2,
-            "name": "Delicious Eats",
-            "contact": "info@deliciouseats.com"
+          "id": 2,
+          "name": "Pizza Planet",
+          "description": "Gourmet pizzas baked in a wood-fired oven",
+          "contact": "555-987-6543",
+          "address": "456 Pine Rd",
+          "image": "https://assets.teenvogue.com/photos/5abce80b6d36ed4396878521/1:1/w_1278,h_1278,c_limit/pizza-planet-opening-in-disneyland.jpg"
         },
         {
-            "id": 3,
-            "name": "Sizzling Grill",
-            "contact": "info@sizzlinggrill.com"
+          "id": 3,
+          "name": "Sushi Delight",
+          "description": "Fresh and delicious sushi rolls",
+          "contact": "555-111-2222",
+          "address": "789 Oak Ave",
+          "image": "https://www.otara.co.nz/wp-content/uploads/2020/04/Sushi-Delight-500x375.jpg"
         },
         {
-            "id": 4,
-            "name": "Spice Fusion",
-            "contact": "hello@spicefusion.com"
+          "id": 4,
+          "name": "Burger Bistro",
+          "description": "Gourmet burgers with a variety of toppings",
+          "contact": "555-444-3333",
+          "address": "567 Elm St",
+          "image": "https://static.wixstatic.com/media/dfdfac_adc2a94434294af68c2635abc31ca9d2~mv2.png/v1/fill/w_302,h_194,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/dfdfac_adc2a94434294af68c2635abc31ca9d2~mv2.png"
         },
         {
-            "id": 5,
-            "name": "Pizza Paradise",
-            "contact": "info@pizzaparadise.com"
+          "id": 5,
+          "name": "Mama's Pasta",
+          "description": "Homemade Italian pasta dishes",
+          "contact": "555-777-8888",
+          "address": "321 Olive Ave",
+          "image": "https://www.thelantern.com/files/2018/08/IMG_4365-1oifhsz.jpeg"
         },
         {
             "id": 6,
