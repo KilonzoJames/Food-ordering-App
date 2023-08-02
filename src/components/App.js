@@ -14,15 +14,15 @@ function App() {
   const [restaurants, setRestaurants] = useState([]);
 
 useEffect(()=>{
-  const url=" http://localhost:4000/food";
+  const url="https://my-json-server.typicode.com/KilonzoJames/Food-database/food";
   fetch(url).then(res=>res.json().then(data=>setFood(data)))}
   ,[])
 useEffect(()=>{
-  const url=" http://localhost:4000/orders";
+  const url="https://my-json-server.typicode.com/KilonzoJames/Food-database/orders";
   fetch(url).then(res=>res.json().then(data=>setOrders(data)))}
   ,[])
 useEffect(() => {
-  fetch('http://localhost:4000/restaurant')
+  fetch('https://my-json-server.typicode.com/KilonzoJames/Food-database/restaurant')
   .then((response) => response.json())
   .then((data) => {
     setRestaurants(data);
