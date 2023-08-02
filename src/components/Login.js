@@ -47,7 +47,7 @@ const Login = () => {
           <span></span>
           <span></span>
           <span></span>
-          <NavLink to="/foodlist">Submit</NavLink>
+          <NavLink to="/homepage">Submit</NavLink>
         </button>
       </form>
     </div>

@@ -1,10 +1,13 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useParams } from 'react-router-dom'
 import Search from './Search'
 import { useState } from 'react'
 
 function Foodlist({foods, choices, setChoices}) {
     const [hint, setHint] = useState("")
+    const { id } = useParams();
+    const food = foods.find((food) => food.id === parseInt(id));
+
 
     function addToCart(event){
       const foodId = parseInt(event.target.id);
@@ -52,7 +55,7 @@ function Foodlist({foods, choices, setChoices}) {
     <div className='col-12 bg-light'>
       <div className='row'>
         <nav className="align-items-center justifd-flex y-content-center">
-            <NavLink to="/" className="nav-link text-primary">Login Page</NavLink> 
+            <NavLink to="/homepage" className="nav-link text-primary">Home Page</NavLink> 
         </nav>
         <Search hint={hint} setHint={setHint}/>
         <div className="food-list"> {/* add this class here */}

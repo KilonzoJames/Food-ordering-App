@@ -50,7 +50,7 @@ const HomePage = () => {
                   <p className="card-text">{restaurant.description}</p>
                 </div>
                 <div className="d-grid">
-                  <NavLink to={`/menupage/${restaurant.id}`} className="btn btn-primary">
+                  <NavLink to={`/foodlist`} className="btn btn-primary">
                     View Menu
                   </NavLink>
                 </div>
