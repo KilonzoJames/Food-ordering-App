@@ -1,13 +1,10 @@
 import React from 'react'
-import { NavLink, useParams } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import Search from './Search'
 import { useState } from 'react'
 
 function Foodlist({foods, choices, setChoices}) {
     const [hint, setHint] = useState("")
-    const { id } = useParams();
-    const food = foods.find((food) => food.id === parseInt(id));
-
 
     function addToCart(event){
       const foodId = parseInt(event.target.id);
