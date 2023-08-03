@@ -26,7 +26,6 @@ const HomePage = ({ username, restaurants, setRestaurants }) => {
           aria-label="Search for restaurants"
         />
         <NavLink to="/foodchoice" className="cart-icon">
-          View Cart
           <FontAwesomeIcon icon={faShoppingCart} beat size="2x" />
         </NavLink>
       </div>

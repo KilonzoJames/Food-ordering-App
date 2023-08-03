@@ -1,5 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
 const OrderList = ({ orders, setOrders, restaurants }) => {
   const rowdata = orders.map((order) => {
@@ -14,7 +16,7 @@ const OrderList = ({ orders, setOrders, restaurants }) => {
         <td>{order.table_no}</td>
         <td>{order.timestamp}</td>
         <td>
-          <button className="btn btn-info">Delete</button>
+          <button className="btn btn-info"><FontAwesomeIcon icon={faTrash} fade size="lg" /></button>
         </td>
       </tr>
     );

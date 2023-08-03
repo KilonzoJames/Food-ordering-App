@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
 function Foodchoice({username, choices, setChoices, quantities, setQuantities }) {
   const [tableId, setTableId] = useState("1")
@@ -38,41 +40,37 @@ function Foodchoice({username, choices, setChoices, quantities, setQuantities })
   const roundedNumberAsNumber = parseFloat(roundedNumber);
 
   const allChoices = choices.map((choice) => (
-    <div className="card border border-primary col-sm-6 col-md-4 col-lg-3 m-2" key={choice.id}>
+    <div className="col-12 col-sm-6 col-md-4 col-lg-3" key={choice.id}>
       <div className="card border-primary mb-4">
         <img
           className="card-img-top"
           src={choice.image}
           alt={choice.food}
-          style={{ height: "200px", objectFit: "cover" }}
+          style={{ height: "250px", objectFit: "cover" }}
         />
-      </div>
-    
-      <div className="content">
-        <div className="header">Food: {choice.food}</div>
-        <div className="meta">
-          <span className="date">Price: {choice.price}</span>
+        <div className="card-body">
+          <h5 className="card-title">Food: {choice.food}</h5>
+          <p className="card-text">Price: {choice.price}</p>
+          <p className="card-text">Restaurant_id: {choice.restaurant_id}</p>
+          <p className="card-text">Quantity: {quantities[choice.id] || 0}</p>
+          {/* Delete Icon with Retained Functionality */}
+          <button
+            onClick={() => removeFood(choice)}
+            id={choice.id}
+            type="button"
+            className="btn btn-primary"
+          >
+            <FontAwesomeIcon icon={faTrash} fade size="lg" />
+          </button>
         </div>
-        <div className="description">Restaurant_id: {choice.restaurant_id}</div>
-        <div className="quantity">Quantity: {quantities[choice.id] || 0}</div>
       </div>
-      <button
-        onClick={() => removeFood(choice)}
-        id={choice.id}
-        type="button"
-        className="btn btn-primary m-2"
-      >
-        Remove
-      </button>
     </div>
   ));
 
   function removeFood(foodToRemove) {
-    console.log(foodToRemove.id);
     const newCart = choices.filter((choice) => foodToRemove.id !== choice.id);
     setChoices(newCart);
   }
-
 
   return (
     <div className="container">
@@ -106,10 +104,9 @@ function Foodchoice({username, choices, setChoices, quantities, setQuantities })
           CHECKOUT(KSH {roundedNumberAsNumber})
         </button>
       </div>
-        {/* <button className="center-button btn btn-danger btn-sm m-2">BOOK TABLE</button>     */}
           </div>
     </div>
   );
 }
 
-export default Foodchoice;
+export default Foodchoice

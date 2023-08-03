@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faShoppingCart, faPlus, faMinus, faCheck } from "@fortawesome/free-solid-svg-icons";
+import { faArrowLeft, faPlus, faMinus, faCheck } from "@fortawesome/free-solid-svg-icons";
 
 function Foodlist({ foods, choices, setChoices, quantities, setQuantities }) {
   const [hint, setHint] = React.useState("");
@@ -71,7 +71,7 @@ function Foodlist({ foods, choices, setChoices, quantities, setQuantities }) {
   function changeQuantity(foodId, value) {
     setQuantities((prevQuantities) => ({
       ...prevQuantities,
-      [foodId]: Math.max((prevQuantities[foodId] || 0) + value, 1), // Ensure quantity is at least 1
+      [foodId]: Math.max((prevQuantities[foodId] || 0) + value, 1), 
     }));
   }
 
@@ -81,6 +81,12 @@ function Foodlist({ foods, choices, setChoices, quantities, setQuantities }) {
       <nav style={{ display: 'flex', justifyContent: 'flex-end' }}>
         <NavLink to="/homepage"className="btn btn-primary m-2">Go Back</NavLink>
       </nav>
+      <div className="d-flex align-items-center justify-content-between mb-8"> 
+        <h1>Food List</h1>
+        <NavLink to="/homepage" className="left-arrow">
+          <FontAwesomeIcon icon={faArrowLeft} beat size="2xl"/>
+        </NavLink>
+      </div>
       <div className="mb-3 d-flex align-items-center">
         <input
           type="text"
@@ -90,10 +96,6 @@ function Foodlist({ foods, choices, setChoices, quantities, setQuantities }) {
           placeholder="Search for food..."
           aria-label="Search for food"
         />
-        <NavLink to="/foodchoice" className="cart-icon">
-          View Cart
-          <FontAwesomeIcon icon={faShoppingCart} beat size="2x" />
-        </NavLink>
       </div>
       <div className="row">{allFoods}</div>
     </div>
