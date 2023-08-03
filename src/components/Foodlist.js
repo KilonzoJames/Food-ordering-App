@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { NavLink, useParams } from 'react-router-dom';
 import Search from './Search';
 
-function Foodlist({ foods, choices, setChoices, quantities, setQuantities }) {
+function Foodlist({ foods, choices, restaurants ,setChoices, quantities, setQuantities }) {
   const [hint, setHint] = useState('');
   const { id } = useParams();
   const food = foods.find((food) => food.id === parseInt(id));
@@ -49,7 +49,7 @@ function Foodlist({ foods, choices, setChoices, quantities, setQuantities }) {
         <div className="meta">
           <span className="date">Price: {food.price}</span>
         </div>
-        <div className="description">Restaurant_id: {food.restaurant_id}</div>
+        <div className="description">Restaurant_name: {restaurants.name}</div>
       </div>
       <div className="quantity">
       <button onClick={() => changeQuantity(food.id, -1)}>-</button>

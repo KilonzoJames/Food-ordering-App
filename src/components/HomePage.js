@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-const HomePage = ({ restaurants, setRestaurants }) => {
+const HomePage = ({ username, restaurants, setRestaurants }) => {
   const [searchTerm, setSearchTerm] = React.useState("");
 
   const filteredRestaurants = restaurants.filter((restaurant) => {
@@ -10,7 +10,7 @@ const HomePage = ({ restaurants, setRestaurants }) => {
 
   return (
     <div className="container">
-      <h1>Welcome to the Food Court!</h1>
+      <h1>{username}, Welcome to the Food Court!</h1>
       <div className="mb-3">
         <input
           type="text"

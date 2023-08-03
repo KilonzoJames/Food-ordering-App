@@ -13,6 +13,8 @@ function App() {
   const [choices, setChoices]=useState([])
   const [restaurants, setRestaurants] = useState([]);
   const [quantities, setQuantities] = useState({});
+  const [username, setUsername] = useState("");
+
 
 useEffect(()=>{
   const url="https://my-json-server.typicode.com/KilonzoJames/Food-database/food";
@@ -35,11 +37,11 @@ useEffect(() => {
 
   return (
     <Routes>
-      <Route exact path="/" element={<Login />} />
-      <Route path="/foodlist/:id" element={<Foodlist foods={foods} choices={choices} setChoices={setChoices} quantities={quantities} setQuantities={setQuantities} />} />
+      <Route exact path="/" element={<Login username={username} setUsername={setUsername} />} />
+      <Route path="/foodlist/:id" element={<Foodlist foods={foods} restaurants={restaurants} choices={choices} setChoices={setChoices} quantities={quantities} setQuantities={setQuantities} />} />
       <Route path="/foodchoice" element={<Foodchoice choices={choices} setChoices={setChoices} quantities={quantities} setQuantities={setQuantities} />} />
       <Route path="/orders" element={<OrderList orders={orders} setOrders={setOrders} restaurants={restaurants} />} />
-      <Route path="/homepage" element={<HomePage restaurants={restaurants} setRestaurants={setRestaurants} />} />
+      <Route path="/homepage" element={<HomePage username={username} restaurants={restaurants} setRestaurants={setRestaurants} />} />
     </Routes>
   );
 }

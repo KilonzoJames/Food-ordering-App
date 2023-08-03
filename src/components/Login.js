@@ -1,10 +1,15 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
-const Login = () => {
-  const [username, setUsername] = useState('');
+const Login = ({username, setUsername}) => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+
+  function handleChange(event){
+    const { value } = event.target;
+    setUsername(value);
+    console.log(value);  
+}
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -12,7 +17,7 @@ const Login = () => {
       console.log('Logged in as:', username);
     } else {
       setError('Username and password must be at least 4 characters long.');
-    }
+    };
   };
 
   return (
@@ -24,10 +29,10 @@ const Login = () => {
       <form onSubmit={handleSubmit}>
         <div className="user-box">
           <input
+            onChange={handleChange}
             type="text"
-            name="username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
+            name="name"
+            value={username.name}
             required
           />
           <label>Username</label>
