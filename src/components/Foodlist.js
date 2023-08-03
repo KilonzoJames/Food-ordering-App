@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowLeft, faPlus, faMinus, faCheck } from "@fortawesome/free-solid-svg-icons";
+import { faArrowLeft, faPlus, faMinus, faCheck, faFilter } from "@fortawesome/free-solid-svg-icons";
 
 function Foodlist({ foods, choices, setChoices, quantities, setQuantities }) {
   const [hint, setHint] = React.useState("");
@@ -10,8 +10,10 @@ function Foodlist({ foods, choices, setChoices, quantities, setQuantities }) {
   const { id } = useParams();
   const filteredFoods = foods.filter((food) => food.restaurant_id === parseInt(id));
   const filteredFoodsWithSearch = filteredFoods.filter((food) =>
-    food.food.toLowerCase().includes(hint.toLowerCase())
-  );
+  food.food?.toLowerCase().includes(hint.toLowerCase())
+);
+
+
 
   const allFoods = filteredFoodsWithSearch.map((food) => (
     <div className="col-12 col-sm-6 col-md-4 col-lg-3" key={food.id}>
@@ -77,15 +79,22 @@ function Foodlist({ foods, choices, setChoices, quantities, setQuantities }) {
 
   return (
     <div className="container">
-      <h1>Food List</h1>
-      <nav style={{ display: 'flex', justifyContent: 'flex-end' }}>
-        <NavLink to="/homepage"className="btn btn-primary m-2">Go Back</NavLink>
-      </nav>
       <div className="d-flex align-items-center justify-content-between mb-8"> 
         <h1>Food List</h1>
         <NavLink to="/homepage" className="left-arrow">
           <FontAwesomeIcon icon={faArrowLeft} beat size="2xl"/>
         </NavLink>
+        <div className="dropdown">
+          <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <FontAwesomeIcon icon={faFilter} />
+          </button>
+          <div className="dropdown-menu" aria-labelledby="dropdownMenu2">
+            <button className="dropdown-item" type="button">Action</button>
+            <button className="dropdown-item" type="button">Another action</button>
+            <button className="dropdown-item" type="button">Something else here</button>
+          </div>
+        </div>
+
       </div>
       <div className="mb-3 d-flex align-items-center">
         <input

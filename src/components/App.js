@@ -4,35 +4,58 @@ import Foodlist from './Foodlist';
 import Foodchoice from './Foodchoice';
 import HomePage from './HomePage';
 import OrderList from './OrderList';
-import { Route, Routes } from 'react-router-dom'; 
+import { Route, Routes } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
 function App() {
-  const [foods, setFood] = useState([])
-  const [orders, setOrders] = useState([])
-  const [choices, setChoices]=useState([])
+  const [foods, setFood] = useState([]);
+  const [orders, setOrders] = useState([]);
+  const [choices, setChoices] = useState([]);
   const [restaurants, setRestaurants] = useState([]);
   const [quantities, setQuantities] = useState({});
   const [username, setUsername] = useState("");
 
+  useEffect(() => {
+    const fetchFoodData = async () => {
+      try {
+        const url = "https://server-dvs6.onrender.com/food";
+        const response = await fetch(url);
+        const data = await response.json();
+        console.log("Fetched food data:", data); // Check the data being fetched
+        setFood(data);
+      } catch (error) {
+        console.error('Error fetching food data:', error);
+      }
+    };
+    fetchFoodData();
+  }, []);
 
-useEffect(()=>{
-  const url="https://my-json-server.typicode.com/KilonzoJames/Food-database/food";
-  fetch(url).then(res=>res.json().then(data=>setFood(data)))}
-  ,[])
-useEffect(()=>{
-  const url="https://my-json-server.typicode.com/KilonzoJames/Food-database/orders";
-  fetch(url).then(res=>res.json().then(data=>setOrders(data)))}
-  ,[])
-useEffect(() => {
-  fetch('https://my-json-server.typicode.com/KilonzoJames/Food-database/restaurant')
-  .then((response) => response.json())
-  .then((data) => {
-    setRestaurants(data);
-      })
-  .catch((error) => {
-    console.error('Error fetching restaurants:', error);
-  });
+  useEffect(() => {
+    const fetchOrderData = async () => {
+      try {
+        const url = "https://server-dvs6.onrender.com/orders";
+        const response = await fetch(url);
+        const data = await response.json();
+        setOrders(data);
+      } catch (error) {
+        console.error('Error fetching order data:', error);
+      }
+    };
+    fetchOrderData();
+  }, []);
+
+  useEffect(() => {
+    const fetchRestaurantData = async () => {
+      try {
+        const url = "https://server-dvs6.onrender.com/restaurant";
+        const response = await fetch(url);
+        const data = await response.json();
+        setRestaurants(data);
+      } catch (error) {
+        console.error('Error fetching restaurant data:', error);
+      }
+    };
+    fetchRestaurantData();
   }, []);
 
   return (
