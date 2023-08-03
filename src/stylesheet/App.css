@@ -5,8 +5,8 @@ html {
 body {
   margin:0;
   padding:0;
-  font-family: sans-serif;
-  /* background: linear-gradient(#bbbbbb, #bbbbbb); */
+  font-family: 'Times New Roman', Times, serif;
+    /* background: linear-gradient(#bbbbbb, #bbbbbb); */
   background-image: url("https://static.vecteezy.com/system/resources/thumbnails/023/591/872/original/3d-animation-people-eating-in-outdoor-food-court-restaurant-or-dinner-concept-on-green-screen-background-free-video.jpg");
   background-size: cover;
   background-position: center;
@@ -173,7 +173,7 @@ button.clicked {
     background-color: red; 
   }
 .card:hover{
-    transform: scale(1.04);
+    transform: scale(1.06);
     cursor: pointer;
     }
 .center-button {
@@ -235,3 +235,7 @@ table{
   background-color: darkgreen;
   box-shadow: 0px 0px 5px black;
 }
+.navLinkStyle{
+  color: blue; 
+  font-size:25px; 
+};

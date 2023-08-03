@@ -3,22 +3,22 @@ import { NavLink } from 'react-router-dom';
 
 function Foodchoice({ choices, setChoices, quantities, setQuantities }) {
   console.log(choices);
-  function calculateTotalPrice () {
-    return choices.reduce ( (total, choice) => {
-      const price = parseInt (String(choice.price).slice (0, String(choice.price).length - 1));
+  function calculateTotalPrice() {
+    return choices.reduce((total, choice) => {
+      const price = parseFloat(choice.price);
       const quantity = quantities[choice.id] || 0;
       return total + price * quantity;
     }, 0);
   }
-  
 
   const allChoices = choices.map((choice) => (
-    <div className="card col-2 border border-primary" key={choice.id}>
-      <div className="image">
+    <div className="card border border-primary col-sm-6 col-md-4 col-lg-3 m-2" key={choice.id}>
+      <div className="card border-primary mb-4">
         <img
           className="card-img-top"
           src={choice.image}
           alt={choice.food}
+          style={{ height: "200px", objectFit: "cover" }}
         />
       </div>
     
@@ -34,7 +34,7 @@ function Foodchoice({ choices, setChoices, quantities, setQuantities }) {
         onClick={() => removeFood(choice)}
         id={choice.id}
         type="button"
-        className="btn btn-primary"
+        className="btn btn-primary m-2"
       >
         Remove
       </button>
@@ -47,12 +47,14 @@ function Foodchoice({ choices, setChoices, quantities, setQuantities }) {
     setChoices(newCart);
   }
 
+
   return (
-    <div className="col-12 bg-light">
+    <div className="container">
       <div className="row">
-        <NavLink to="/">Home Page</NavLink>
-        <NavLink to="/foodlist">Food List</NavLink>
-        <NavLink to="/orders">Order List</NavLink>
+        <nav style={{ display: 'flex', justifyContent: 'flex-end' }}>
+        <NavLink to="/homepage" className='navLinkStyle'>Home Page </NavLink>
+        <NavLink to="/orders"  className="navLinkStyle">History</NavLink>
+        </nav>
         {allChoices}
         <button
           type="submit"

@@ -36,7 +36,7 @@ const OrderList = ({ orders, setOrders, restaurants }) => {
         <tbody>{rowdata}</tbody>
       </table>
       <div className="text-center">
-        <NavLink to="/" className="btn btn-primary">
+        <NavLink to="/homepage" className="btn btn-primary">
           Home Page
         </NavLink>
       </div>

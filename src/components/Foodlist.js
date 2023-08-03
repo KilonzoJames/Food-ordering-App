@@ -78,6 +78,9 @@ function Foodlist({ foods, choices, setChoices, quantities, setQuantities }) {
   return (
     <div className="container">
       <h1>Food List</h1>
+      <nav style={{ display: 'flex', justifyContent: 'flex-end' }}>
+        <NavLink to="/homepage" className='navLinkStyle'>Go Back</NavLink>
+      </nav>
       <div className="mb-3 d-flex align-items-center">
         <input
           type="text"
@@ -88,6 +91,7 @@ function Foodlist({ foods, choices, setChoices, quantities, setQuantities }) {
           aria-label="Search for food"
         />
         <NavLink to="/foodchoice" className="cart-icon">
+          View Cart
           <FontAwesomeIcon icon={faShoppingCart} beat size="2x" />
         </NavLink>
       </div>

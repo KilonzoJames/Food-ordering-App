@@ -13,6 +13,9 @@ const HomePage = ({ username, restaurants, setRestaurants }) => {
   return (
     <div className="container">
       <h1>{username!=="" ? `${username}, Welcome to the Food Court!` : "Welcome to the Food Court!"}</h1>
+      <nav style={{ display: 'flex', justifyContent: 'flex-end' }}>
+        <NavLink to="/" className='navLinkStyle'>Log-Out</NavLink>
+        </nav>
       <div className="mb-3 d-flex align-items-center">
         <input
           type="text"
@@ -23,6 +26,7 @@ const HomePage = ({ username, restaurants, setRestaurants }) => {
           aria-label="Search for restaurants"
         />
         <NavLink to="/foodchoice" className="cart-icon">
+          View Cart
           <FontAwesomeIcon icon={faShoppingCart} beat size="2x" />
         </NavLink>
       </div>
