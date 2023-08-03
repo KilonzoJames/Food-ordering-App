@@ -10,7 +10,7 @@ const HomePage = ({ username, restaurants, setRestaurants }) => {
 
   return (
     <div className="container">
-      <h1>{username}, Welcome to the Food Court!</h1>
+      <h1>{username!=="" ? `${username}, Welcome to the Food Court!` : "Welcome to the Food Court!"}</h1>
       <div className="mb-3">
         <input
           type="text"
