@@ -14,7 +14,7 @@ const HomePage = ({ username, restaurants, setRestaurants }) => {
     <div className="container">
       <h1>{username!=="" ? `${username}, Welcome to the Food Court!` : "Welcome to the Food Court!"}</h1>
       <nav style={{ display: 'flex', justifyContent: 'flex-end' }}>
-        <NavLink to="/" className='navLinkStyle'>Log-Out</NavLink>
+        <NavLink to="/" className="btn btn-primary">Log-Out</NavLink>
         </nav>
       <div className="mb-3 d-flex align-items-center">
         <input

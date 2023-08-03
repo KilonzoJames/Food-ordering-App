@@ -1,8 +1,32 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
-function Foodchoice({ choices, setChoices, quantities, setQuantities }) {
-  console.log(choices);
+function Foodchoice({username, choices, setChoices, quantities, setQuantities }) {
+  const [tableId, setTableId] = useState("1")
+  function handleCheckout(){
+      postOrder()
+      alert(`Thank you for your purchase,${username}! Your order will be served at table ${tableId}`);
+      window.location.reload();
+  }
+  const postOrder=(order)=>{
+    const url="https://my-json-server.typicode.com/KilonzoJames/Food-database/orders";
+    const postData={
+    method: "POST",
+    headers: {
+    "Content-Type": "application/json",
+    Accept: "application/json"
+    },
+    body: JSON.stringify({
+        food_id: "",
+        table_no: tableId,
+        timestamp: "",
+        restaurant_id: ""
+    })};
+   return fetch(url, postData)
+   .then(response => response.json())
+   .then(response => console.log(response))
+}
+
   function calculateTotalPrice() {
     return choices.reduce((total, choice) => {
       const price = parseFloat(choice.price);
@@ -10,6 +34,8 @@ function Foodchoice({ choices, setChoices, quantities, setQuantities }) {
       return total + price * quantity;
     }, 0);
   }
+  const roundedNumber = calculateTotalPrice().toFixed(2);
+  const roundedNumberAsNumber = parseFloat(roundedNumber);
 
   const allChoices = choices.map((choice) => (
     <div className="card border border-primary col-sm-6 col-md-4 col-lg-3 m-2" key={choice.id}>
@@ -52,23 +78,36 @@ function Foodchoice({ choices, setChoices, quantities, setQuantities }) {
     <div className="container">
       <div className="row">
         <nav style={{ display: 'flex', justifyContent: 'flex-end' }}>
-        <NavLink to="/homepage" className='navLinkStyle'>Home Page </NavLink>
-        <NavLink to="/orders"  className="navLinkStyle">History</NavLink>
+        <NavLink to="/homepage" className="btn btn-primary m-2">Main Page </NavLink>
+        <NavLink to="/orders"  className="btn btn-primary m-2">History</NavLink>
         </nav>
         {allChoices}
-        <button
+        <div className="input-group mb-3">
+          <label className="input-group-text">Book Table</label>
+          <select 
+          className="form-select"
+          id="inputGroupSelect01"
+          value={tableId}
+          onChange={(e) => setTableId(e.target.value)}
+          >
+            <option value>Choose table no...</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+          <br/>
+          <button
           type="submit"
-          className="center-button btn btn-success btn-width-50"
-          onClick={() => {
-            alert('Thank you for your purchase!');
-            window.location.reload();
-          }}
+          className="center-button btn btn-info btn-sm m-2"
+          onClick={handleCheckout}
         >
-          $ {calculateTotalPrice()}
-          <br />
-          Checkout
+          CHECKOUT(KSH {roundedNumberAsNumber})
         </button>
       </div>
+        {/* <button className="center-button btn btn-danger btn-sm m-2">BOOK TABLE</button>     */}
+          </div>
     </div>
   );
 }

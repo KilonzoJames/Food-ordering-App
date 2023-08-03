@@ -22,7 +22,7 @@ const OrderList = ({ orders, setOrders, restaurants }) => {
 
   return (
     <div className="container">
-      <h2>Order List</h2>
+      <h2>Order History</h2>
       <table className="table table-bordered table-responsive">
         <thead>
           <tr>

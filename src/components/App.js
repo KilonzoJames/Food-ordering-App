@@ -39,7 +39,7 @@ useEffect(() => {
     <Routes>
       <Route exact path="/" element={<Login username={username} setUsername={setUsername} />} />
       <Route path="/foodlist/:id" element={<Foodlist foods={foods} restaurants={restaurants} choices={choices} setChoices={setChoices} quantities={quantities} setQuantities={setQuantities} />} />
-      <Route path="/foodchoice" element={<Foodchoice choices={choices} setChoices={setChoices} quantities={quantities} setQuantities={setQuantities} />} />
+      <Route path="/foodchoice" element={<Foodchoice username={username} choices={choices} setChoices={setChoices} quantities={quantities} setQuantities={setQuantities} />} />
       <Route path="/orders" element={<OrderList orders={orders} setOrders={setOrders} restaurants={restaurants} />} />
       <Route path="/homepage" element={<HomePage username={username} restaurants={restaurants} setRestaurants={setRestaurants} />} />
     </Routes>

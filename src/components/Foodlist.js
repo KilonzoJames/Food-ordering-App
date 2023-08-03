@@ -79,7 +79,7 @@ function Foodlist({ foods, choices, setChoices, quantities, setQuantities }) {
     <div className="container">
       <h1>Food List</h1>
       <nav style={{ display: 'flex', justifyContent: 'flex-end' }}>
-        <NavLink to="/homepage" className='navLinkStyle'>Go Back</NavLink>
+        <NavLink to="/homepage"className="btn btn-primary m-2">Go Back</NavLink>
       </nav>
       <div className="mb-3 d-flex align-items-center">
         <input
