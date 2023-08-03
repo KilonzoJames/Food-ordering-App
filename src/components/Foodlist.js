@@ -29,12 +29,14 @@ function Foodlist({ foods, choices, restaurants ,setChoices, quantities, setQuan
       : console.log('Already in favourites');
     event.target.classList.add('clicked');
   }
-  
   const filteredFoodsByHint = filteredFoods.filter((food) => {
-    const lowerCaseValue = hint.toLowerCase();
-    return food.food.toLowerCase().includes(lowerCaseValue);
+    if (food.food) {
+      const lowerCaseValue = hint.toLowerCase();
+      return food.food.toLowerCase().includes(lowerCaseValue);
+    }
+    return false;
   });
-
+  
   const allFoods = filteredFoodsByHint.map((food) => (
     <div className="card col-2 border border-primary" key={food.id}>
       <div className="image">
