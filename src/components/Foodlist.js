@@ -55,30 +55,32 @@ function Foodlist({ foods, choices, setChoices, quantities, setQuantities }) {
             </button>
           </div>
           <button
-            onClick={() => addToCart(food)}
-            type="button"
-            className={`btn btn-primary ${addedToCart && isFoodAddedToCart(food) ? "added" : ""}`}
-          >
-            {addedToCart && isFoodAddedToCart(food) ? <FontAwesomeIcon icon={faCheck} /> : "Add to Cart"}
-          </button>
+  onClick={() => addToCart(food, quantities[food.id] || 1)} // Pass the selected quantity
+  type="button"
+  className={`btn btn-primary ${addedToCart && isFoodAddedToCart(food) ? "added" : ""}`}
+>
+  {addedToCart && isFoodAddedToCart(food) ? <FontAwesomeIcon icon={faCheck} /> : "Add to Cart"}
+</button>
+
         </div>
       </div>
     </div>
   ));
 
-  function addToCart(selectedFood) {
+  function addToCart(selectedFood, quantity) {
     const isFoodAlreadyAdded = choices.some((food) => food.id === selectedFood.id);
-
+  
     if (!isFoodAlreadyAdded) {
       setChoices([...choices, selectedFood]);
-      setQuantities({ ...quantities, [selectedFood.id]: 1 });
+      setQuantities({ ...quantities, [selectedFood.id]: quantity });
     }
-
+  
     setAddedToCart(true);
     setTimeout(() => {
       setAddedToCart(false);
     }, 2000);
   }
+  
 
   function isFoodAddedToCart(selectedFood) {
     return choices.some((food) => food.id === selectedFood.id);

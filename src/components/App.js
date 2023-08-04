@@ -4,6 +4,7 @@ import Foodlist from './Foodlist';
 import Foodchoice from './Foodchoice';
 import HomePage from './HomePage';
 import OrderList from './OrderList';
+import UserProfile from './UserProfile';
 import { Route, Routes } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
@@ -61,6 +62,7 @@ function App() {
   return (
     <Routes>
       <Route exact path="/" element={<Login username={username} setUsername={setUsername} />} />
+      <Route path="/userprofile" element={<UserProfile username={username}/>} /> 
       <Route path="/foodlist/:id" element={<Foodlist foods={foods} restaurants={restaurants} choices={choices} setChoices={setChoices} quantities={quantities} setQuantities={setQuantities} />} />
       <Route path="/foodchoice" element={<Foodchoice username={username} choices={choices} setChoices={setChoices} quantities={quantities} setQuantities={setQuantities} />} />
       <Route path="/orders" element={<OrderList orders={orders} setOrders={setOrders} restaurants={restaurants} />} />

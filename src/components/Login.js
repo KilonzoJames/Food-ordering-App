@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 
 const Login = () => {
   const [username, setUsername] = useState('');
@@ -59,7 +59,7 @@ const Login = () => {
             <span></span>
             <span></span>
             <span></span>
-            Submit
+            <NavLink to="/homepage">Submit</NavLink>
           </button>
         </form>
       </div>

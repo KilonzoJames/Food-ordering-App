@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faHome,
   faUser,
+  faPhone,
   faShoppingCart,
   faBookOpen,
   faSignOutAlt,
@@ -19,53 +20,70 @@ const HomePage = ({ username, restaurants, setRestaurants }) => {
   return (
     <div>
       {/* Navigation Bar */}
-      <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
-        <div className="container">
-          <NavLink className="navbar-brand" to="/">
-            Food Court
-          </NavLink>
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse" id="navbarNav">
-            <ul className="navbar-nav ms-auto">
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/homepage">
-                  <FontAwesomeIcon icon={faHome} className="me-1 d-lg-none" />
-                  Home
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/userprofile">
-                  <FontAwesomeIcon icon={faUser} className="me-1 d-lg-none" />
-                  Profile
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/foodchoice">
-                  <FontAwesomeIcon icon={faShoppingCart} className="me-1 d-lg-none" />
-                  Cart
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/">
-                  <FontAwesomeIcon icon={faSignOutAlt} className="me-1 d-lg-none"  />
-                  Log-Out
-                </NavLink>
-              </li>
-            </ul>
-          </div>
+      <nav className="navbar navbar-expand-lg navbar-dark bg-secondary fixed-top">
+      <div className="container">
+        <h1 style={{ color: "tan" }}>NextGen Food Court</h1>
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div className="collapse navbar-collapse" id="navbarNav">
+          <ul className="navbar-nav ms-auto">
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/homepage">
+                <FontAwesomeIcon icon={faHome} className="me-1 d-lg-none" />
+                Home
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/userprofile">
+                <FontAwesomeIcon icon={faUser} className="me-1 d-lg-none" />
+                Profile
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/foodchoice">
+                <FontAwesomeIcon
+                  icon={faShoppingCart}
+                  className="me-1 d-lg-none"
+                />
+                Cart
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link d-none d-lg-flex" href="tel:+123456789">
+                <FontAwesomeIcon icon={faPhone} className="me-1" />
+                Contact
+              </a>
+              <a
+                className="nav-link d-lg-none"
+                href="tel:+123456789"
+                style={{ display: "flex", alignItems: "center" }}
+              >
+                <FontAwesomeIcon icon={faPhone} className="me-1" />
+                <span>Contact</span>
+              </a>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/">
+                <FontAwesomeIcon
+                  icon={faSignOutAlt}
+                  className="me-1 d-lg-none"
+                />
+                Log-Out
+              </NavLink>
+            </li>
+          </ul>
         </div>
-      </nav>
-
+      </div>
+    </nav>
 
       {/* Main Content */}
       <div className="container my-4">
@@ -115,6 +133,7 @@ const HomePage = ({ username, restaurants, setRestaurants }) => {
       <footer className="bg-dark text-light text-center py-3 mt-5">
         &copy; {new Date().getFullYear()} Food Court. All rights reserved.
       </footer>
+
     </div>
   );
 };
