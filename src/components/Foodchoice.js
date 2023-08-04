@@ -11,7 +11,7 @@ function Foodchoice({username, choices, setChoices, quantities, setQuantities })
       window.location.reload();
   }
   const postOrder=(order)=>{
-    const url="https://my-json-server.typicode.com/KilonzoJames/Food-database/orders";
+    const url="https://server-dvs6.onrender.com/orders";
     const postData={
     method: "POST",
     headers: {
