@@ -159,7 +159,9 @@ const UserProfile = ({ username }) => {
         </NavLink>
         <button type="button" className="btn btn-danger">
           <FontAwesomeIcon icon={faSignOut} className="me-1" />
-          Logout
+          <NavLink style={{ color: "white" }} to="/">
+            Logout
+          </NavLink>
         </button>
       </div>
     </div>

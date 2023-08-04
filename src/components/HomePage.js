@@ -53,13 +53,13 @@ const HomePage = ({ username, restaurants, setRestaurants }) => {
                 <FontAwesomeIcon
                   icon={faShoppingCart}
                   className="me-1 d-lg-none"
-                />
-                Cart
+                /><FontAwesomeIcon icon={faShoppingCart} beat size="1x" />  
+                Shopping Cart
               </NavLink>
             </li>
             <li className="nav-item">
               <a className="nav-link d-none d-lg-flex" href="tel:+123456789">
-                <FontAwesomeIcon icon={faPhone} className="me-1" />
+                <FontAwesomeIcon icon={faPhone} className="me-1" beat size="1x"/>
                 Contact
               </a>
               <a
@@ -97,13 +97,13 @@ const HomePage = ({ username, restaurants, setRestaurants }) => {
             type="text"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="form-control form-control-sm me-3"
+            className="form-control form-control-sm me-5"
             placeholder="Search for restaurants..."
             aria-label="Search for restaurants"
           />
           
         </div>
-        <div className="row row-cols-1 row-cols-md-2 row-cols-lg-4 row-cols-xl-5 gy-4">
+        <div className="row row-cols-1 row-cols-md-2 row-cols-lg-4 gy-4">
           {filteredRestaurants.map((restaurant) => (
             <div className="col" key={restaurant.id}>
               <div className="card border-primary h-100">
@@ -111,14 +111,14 @@ const HomePage = ({ username, restaurants, setRestaurants }) => {
                   className="card-img-top"
                   src={restaurant.image}
                   alt={restaurant.name}
-                  style={{ height: "200px", objectFit: "cover" }}
+                  style={{ height: '200px', objectFit: 'cover' }}
                 />
                 <div className="card-body">
                   <h2 className="card-title">{restaurant.name}</h2>
                   <p className="card-text">{restaurant.description}</p>
                   <div className="d-grid">
                     <NavLink to={`/foodlist/${restaurant.id}`} className="btn btn-primary">
-                      <FontAwesomeIcon icon={faBookOpen} className="me-1" />
+                      <FontAwesomeIcon icon={faBookOpen} className="me-2" />
                       View Menu
                     </NavLink>
                   </div>

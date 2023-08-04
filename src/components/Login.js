@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 
-const Login = () => {
-  const [username, setUsername] = useState('');
+const Login = ({username, setUsername}) => {
   const [password, setPassword] = useState('');
 
   const handleChange = (event) => {
@@ -24,9 +23,13 @@ const Login = () => {
       console.log('Form submitted!');
       // Redirect to the homepage
       navigate('/homepage');
+        alert(username !== ""
+      ? `${username}, Welcome to the Food Court!`
+      : "Welcome to the Food Court!"
+    );
     } else {
       console.log('Username and password should have at least 4 characters.');
-    }
+  }
   };
 
   return (

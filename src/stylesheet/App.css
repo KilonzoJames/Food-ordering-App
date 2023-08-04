@@ -188,10 +188,6 @@ body {
 /* button.clicked {
     background-color: red; 
   }
-.card:hover{
-    transform: scale(1.06);
-    cursor: pointer;
-    }
 .center-button {
     position: absolute;
     height: 40px;
@@ -231,16 +227,19 @@ table{
     margin: 10px;
 }
 
-#login-text{
-  text-align: center;
-  font-size: 6vh;
-}
-
 .navLinkStyle{
   color: blue; 
   font-size:25px; 
 }; */
+.card:hover{
+  transform: scale(1.06);
+  cursor: pointer;
+  }
 
+#login-text{
+  text-align: center;
+  font-size: 6vh;
+}
 .quantity button {
   background-color: green;
   color: white;
