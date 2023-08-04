@@ -4,6 +4,24 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
 const OrderList = ({ orders, setOrders, restaurants }) => {
+  function deleteBot(orderToDelete){
+    const orderArray=orders.filter((order)=>orderToDelete.id!==order.id)
+    console.log(orderArray.id)
+    deleteMethod(orderArray)
+    .then(() => {
+      setOrders(orderArray);
+    })
+    }
+  function deleteMethod(order){
+      const url=`https://server-dvs6.onrender.com/orders/${order.id}`;
+      const method={
+        method: "DELETE"
+      }
+      return fetch(url, method)
+      .then(data=>data)
+    }
+
+
   const rowdata = orders.map((order) => {
     const restaurantForOrder = restaurants.find(
       (restaurant) => restaurant.id === order.restaurant_id
@@ -16,7 +34,7 @@ const OrderList = ({ orders, setOrders, restaurants }) => {
         <td>{order.table_no}</td>
         <td>{order.timestamp}</td>
         <td>
-          <button className="btn btn-info"><FontAwesomeIcon icon={faTrash} fade size="lg" /></button>
+          <button onClick={()=>deleteBot(order)} className="btn btn-info"><FontAwesomeIcon icon={faTrash} fade size="lg" /></button>
         </td>
       </tr>
     );
