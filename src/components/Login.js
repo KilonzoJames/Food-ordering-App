@@ -1,21 +1,36 @@
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
-const Login = ({username, setUsername}) => {
+const Login = () => {
+  const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
-  function handleChange(event){
-    const { value } = event.target;
-    setUsername(value);
-    console.log(value); 
-}
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    if (name === 'name') {
+      setUsername(value);
+    }
+    if (name === 'password') {
+      setPassword(value);
+    }
+  };
+
+  const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    if (username.length >= 4 && password.length >= 4) {
+      // Save the username and perform any action here
+      console.log('Form submitted!');
+      // Redirect to the homepage
+      navigate('/homepage');
+    } else {
+      console.log('Username and password should have at least 4 characters.');
+    }
   };
 
   return (
-    <div className="login-page"> 
+    <div className="login-page">
       <h1 id="login-text">Welcome to Nextgen Food Court</h1>
       <div className="login-box">
         <h2>Login</h2>
@@ -25,7 +40,7 @@ const Login = ({username, setUsername}) => {
               onChange={handleChange}
               type="text"
               name="name"
-              value={username}
+              placeholder="Username"
               required
             />
             <label>Username</label>
@@ -34,8 +49,7 @@ const Login = ({username, setUsername}) => {
             <input
               type="password"
               name="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              placeholder="Password"
               required
             />
             <label>Password</label>
@@ -45,7 +59,7 @@ const Login = ({username, setUsername}) => {
             <span></span>
             <span></span>
             <span></span>
-            <NavLink to="/homepage">Submit</NavLink>
+            Submit
           </button>
         </form>
       </div>
