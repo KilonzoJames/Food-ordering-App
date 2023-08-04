@@ -39,7 +39,7 @@ const UserProfile = ({ username }) => {
     <div>
       <nav className="navbar navbar-expand-lg navbar-dark bg-secondary">
         <div className="container">
-          <h1 style={{ color: "tan" }}>NextGen Food Court</h1>
+          <h1 style={{ color: "orange" }}>NextGen Food Court</h1>
           <button
             className="navbar-toggler"
             type="button"

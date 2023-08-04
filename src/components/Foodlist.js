@@ -98,7 +98,7 @@ function Foodlist({ foods, choices, setChoices, quantities, setQuantities }) {
       {/* Navigation Bar */}
       <nav className="navbar navbar-expand-lg navbar-dark bg-secondary fixed-top">
         <div className="container">
-          <h1 style={{ color: "tan" }}>NextGen Food Court</h1>
+          <h1 style={{ color: "orange" }}>NextGen Food Court</h1>
           <button
             className="navbar-toggler"
             type="button"

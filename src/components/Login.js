@@ -34,9 +34,9 @@ const Login = ({username, setUsername}) => {
 
   return (
     <div className="login-page">
-      <h1 id="login-text">Welcome to Nextgen Food Court</h1>
+      <h1 id="login-text" style={{ color: "black" }}>WELCOME TO NEXTGEN FOOD COURT</h1>
       <div className="login-box">
-        <h2>Login</h2>
+        <h2 style={{ color: "white" }}>Login</h2>
         <form onSubmit={handleSubmit}>
           <div className="user-box">
             <input

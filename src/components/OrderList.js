@@ -57,7 +57,7 @@ const OrderList = ({ orders, setOrders, restaurants }) => {
       </table>
       <div className="text-center">
         <NavLink to="/homepage" className="btn btn-primary">
-          Home Page
+          Home
         </NavLink>
       </div>
     </div>
