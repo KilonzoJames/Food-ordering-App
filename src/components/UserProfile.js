@@ -67,13 +67,13 @@ const UserProfile = ({ username }) => {
               </li>
               <li className="nav-item">
                 <NavLink className="nav-link" to="/foodchoice">
-                  <FontAwesomeIcon icon={faShoppingCart} className="me-1 d-lg-none" />
+                  <FontAwesomeIcon icon={faShoppingCart} beat size="1x" />
                   Cart
                 </NavLink>
               </li>
               <li className="nav-item">
                 <a className="nav-link d-none d-lg-flex" href="tel:+123456789">
-                  <FontAwesomeIcon icon={faPhone} className="me-1" />
+                  <FontAwesomeIcon icon={faPhone} beat size="1x"  className="me-1" />
                   Contact
                 </a>
                 <a

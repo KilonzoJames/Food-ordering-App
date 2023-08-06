@@ -126,8 +126,8 @@ function Foodlist({ foods, choices, setChoices, quantities, setQuantities }) {
               </li>
               <li className="nav-item">
                 <NavLink className="nav-link" to="/foodchoice">
-                  <FontAwesomeIcon icon={faShoppingCart} className="me-1 d-lg-none" />
-                  Cart
+                  <FontAwesomeIcon icon={faShoppingCart} beat size="1x" />
+                  Shopping Cart
                 </NavLink>
               </li>
               <li className="nav-item">

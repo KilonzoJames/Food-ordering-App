@@ -59,6 +59,9 @@ const OrderList = ({ orders, setOrders, restaurants }) => {
         <NavLink to="/homepage" className="btn btn-primary">
           Home
         </NavLink>
+        {/* <NavLink to="/homepage" className="left-arrow">
+          <FontAwesomeIcon icon={faArrowLeft} beat size="2xl"/>
+        </NavLink> */}
       </div>
     </div>
   );

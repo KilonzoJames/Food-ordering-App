@@ -6,14 +6,23 @@ import { faTrash,faHome,
   faPhone,
   faShoppingCart,
   faSignOutAlt, } from "@fortawesome/free-solid-svg-icons";
+import Swal from 'sweetalert2'
+
 
 function Foodchoice({username, choices, setChoices, quantities, setQuantities }) {
   const [tableId, setTableId] = useState("1")
   function handleCheckout(){
       postOrder()
-      alert(`Thank you for your purchase,${username}! Your order will be served at table ${tableId}`);
-      window.location.reload();
-  }
+      Swal.fire({
+        title: `Thank you for your purchase,${username}!`,
+        text:`Your order will be served at table ${tableId}`,
+        imageUrl: 'https://images.unsplash.com/photo-1520869578617-557561d7b114?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8ZGlubmVyJTIwdGFibGV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60',
+        imageWidth: 400,
+        imageHeight: 200,
+        imageAlt: 'Custom image',
+      })
+      setChoices([])  
+    }
   const postOrder=(order)=>{
     const url="https://server-dvs6.onrender.com/orders";
     const postData={
@@ -110,13 +119,13 @@ const allChoices = choices.map((choice) => (
               </li>
               <li className="nav-item">
                 <NavLink className="nav-link" to="/foodchoice">
-                  <FontAwesomeIcon icon={faShoppingCart} className="me-1 d-lg-none" />
-                  Cart
+                  <FontAwesomeIcon icon={faShoppingCart} beat size="1x" />
+                  Shopping Cart
                 </NavLink>
               </li>
               <li className="nav-item">
                 <a className="nav-link d-none d-lg-flex" href="tel:+123456789">
-                  <FontAwesomeIcon icon={faPhone} className="me-1" />
+                  <FontAwesomeIcon icon={faPhone} beat size="1x" className="me-1" />
                   Contact
                 </a>
                 <a
