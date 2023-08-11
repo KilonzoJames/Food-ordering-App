@@ -5,9 +5,8 @@ import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
 const OrderList = ({ orders, setOrders, restaurants }) => {
   function deleteBot(orderToDelete){
-    const orderArray=orders.filter((order)=>orderToDelete.id!==order.id)
-    console.log(orderArray.id)
-    deleteMethod(orderArray)
+    const orderArray=orders.filter((order)=>orderToDelete!==order)
+    deleteMethod(orderToDelete)
     .then(() => {
       setOrders(orderArray);
     })

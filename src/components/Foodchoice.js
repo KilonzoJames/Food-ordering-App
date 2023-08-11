@@ -9,7 +9,7 @@ import { faTrash,faHome,
 import Swal from 'sweetalert2'
 
 
-function Foodchoice({username, choices, setChoices, quantities, setQuantities }) {
+function Foodchoice({username, choices, setChoices, quantities }) {
   const [tableId, setTableId] = useState("1")
   function handleCheckout(){
       postOrder()
@@ -24,6 +24,7 @@ function Foodchoice({username, choices, setChoices, quantities, setQuantities })
       setChoices([])  
     }
   const postOrder=(order)=>{
+    const currentTimestamp = new Date().toISOString().split("T")[0]; // Get current timestamp in ISO format
     const url="https://server-dvs6.onrender.com/orders";
     const postData={
     method: "POST",
@@ -34,7 +35,7 @@ function Foodchoice({username, choices, setChoices, quantities, setQuantities })
     body: JSON.stringify({
         food_id: "",
         table_no: tableId,
-        timestamp: "",
+        timestamp: currentTimestamp,
         restaurant_id: ""
     })};
    return fetch(url, postData)
