@@ -6,6 +6,8 @@ import { faPlus, faSignOut,faHome,
   faShoppingCart,
   faSignOutAlt, } from '@fortawesome/free-solid-svg-icons';
 import { NavLink } from 'react-router-dom';
+import Navbar from "./Navbar";
+
 
 const UserProfile = ({ username }) => {
   const [phoneNumber, setPhoneNumber] = useState('');
@@ -37,66 +39,12 @@ const UserProfile = ({ username }) => {
 
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-dark bg-secondary">
-        <div className="container">
-          <h1 style={{ color: "orange" }}>NextGen Food Court</h1>
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse" id="navbarNav">
-            <ul className="navbar-nav ms-auto">
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/homepage">
-                  <FontAwesomeIcon icon={faHome} className="me-1 d-lg-none" />
-                  Home
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/userprofile">
-                  <FontAwesomeIcon icon={faUser} className="me-1 d-lg-none" />
-                  Profile
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/foodchoice">
-                  <FontAwesomeIcon icon={faShoppingCart} beat size="1x" />
-                  Cart
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link d-none d-lg-flex" href="tel:+123456789">
-                  <FontAwesomeIcon icon={faPhone} beat size="1x"  className="me-1" />
-                  Contact
-                </a>
-                <a
-                  className="nav-link d-lg-none"
-                  href="tel:+123456789"
-                  style={{ display: "flex", alignItems: "center" }}
-                >
-                  <FontAwesomeIcon icon={faPhone} className="me-1" />
-                  <span>Contact</span>
-                </a>
-              </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/">
-                  <FontAwesomeIcon icon={faSignOutAlt} className="me-1 d-lg-none" />
-                  Log-Out
-                </NavLink>
-              </li>
-            </ul>
-          </div>
+        {/* Navigation Bar */}
+        <div className='mb-5'>
+          <Navbar/>
         </div>
-      </nav>
-
-    <div className="container mt-5">
+    <div className="container mt-5 ">
+      div
       <h1 className="text-center">User Profile</h1>
 
       {/* Image Section */}

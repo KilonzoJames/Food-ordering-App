@@ -7,7 +7,7 @@ import { faTrash,faHome,
   faShoppingCart,
   faSignOutAlt, } from "@fortawesome/free-solid-svg-icons";
 import Swal from 'sweetalert2'
-
+import Navbar from "./Navbar";
 
 function Foodchoice({username, choices, setChoices, quantities }) {
   const [tableId, setTableId] = useState("1")
@@ -89,65 +89,12 @@ const allChoices = choices.map((choice) => (
   }
 
   return (
-    <div>
-      <nav className="navbar navbar-expand-lg navbar-dark bg-secondary">
-        <div className="container">
-          <h1 style={{ color: "orange" }}>NextGen Food Court</h1>
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse" id="navbarNav">
-            <ul className="navbar-nav ms-auto">
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/homepage">
-                  <FontAwesomeIcon icon={faHome} className="me-1 d-lg-none" />
-                  Home
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/userprofile">
-                  <FontAwesomeIcon icon={faUser} className="me-1 d-lg-none" />
-                  Profile
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/foodchoice">
-                  <FontAwesomeIcon icon={faShoppingCart} beat size="1x" />
-                  Shopping Cart
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link d-none d-lg-flex" href="tel:+123456789">
-                  <FontAwesomeIcon icon={faPhone} beat size="1x" className="me-1" />
-                  Contact
-                </a>
-                <a
-                  className="nav-link d-lg-none"
-                  href="tel:+123456789"
-                  style={{ display: "flex", alignItems: "center" }}
-                >
-                  <FontAwesomeIcon icon={faPhone} className="me-1" />
-                  <span>Contact</span>
-                </a>
-              </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/">
-                  <FontAwesomeIcon icon={faSignOutAlt} className="me-1 d-lg-none" />
-                  Log-Out
-                </NavLink>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
+    <div 
+    >
+      {/* Navigation Bar */}
+      <div className='mb-5'>
+        <Navbar/>
+      </div>
 
       <div className="container mt-5">
         <div className="row">
