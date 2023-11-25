@@ -19,7 +19,7 @@ function App() {
   useEffect(() => {
     const fetchFoodData = async () => {
       try {
-        const url = "https://server-dvs6.onrender.com/food";
+        const url = "https://food-app-server-nw3w.onrender.com/fooditems";
         const response = await fetch(url);
         const data = await response.json();
         console.log("Fetched food data:", data); // Check the data being fetched
@@ -34,7 +34,7 @@ function App() {
   useEffect(() => {
     const fetchOrderData = async () => {
       try {
-        const url = "https://server-dvs6.onrender.com/orders";
+        const url = "https://food-app-server-nw3w.onrender.com/orders";
         const response = await fetch(url);
         const data = await response.json();
         setOrders(data);
@@ -48,7 +48,7 @@ function App() {
   useEffect(() => {
     const fetchRestaurantData = async () => {
       try {
-        const url = "https://server-dvs6.onrender.com/restaurant";
+        const url = "https://food-app-server-nw3w.onrender.com/restaurants";
         const response = await fetch(url);
         const data = await response.json();
         setRestaurants(data);
