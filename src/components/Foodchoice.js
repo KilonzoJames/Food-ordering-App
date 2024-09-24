@@ -25,7 +25,7 @@ function Foodchoice({username, choices, setChoices, quantities }) {
     }
   const postOrder=(order)=>{
     const currentTimestamp = new Date().toISOString().split("T")[0]; // Get current timestamp in ISO format
-    const url="https://server-dvs6.onrender.com/orders";
+    const url="/orders";
     const postData={
     method: "POST",
     headers: {

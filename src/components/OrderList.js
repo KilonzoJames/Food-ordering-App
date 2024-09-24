@@ -12,7 +12,7 @@ const OrderList = ({ orders, setOrders, restaurants }) => {
     })
     }
   function deleteMethod(order){
-      const url=`https://server-dvs6.onrender.com/orders/${order.id}`;
+      const url=`/orders/${order.id}`;
       const method={
         method: "DELETE"
       }
