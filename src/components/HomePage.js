@@ -60,7 +60,7 @@ const HomePage = ({ username, restaurants, setRestaurants }) => {
       </div>
 
       {/* Footer */}
-      <footer className="bg-dark text-light text-center py-3 mt-5">
+      <footer className="fixed-bottom  bg-dark text-light text-center py-3 mt-5">
         &copy; {new Date().getFullYear()} Food Court. All rights reserved.
       </footer>
 
